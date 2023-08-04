@@ -1,0 +1,9 @@
+[project]
+name = "apache-airflow-providers-fortanix"
+description = "Provider package for fortanix"
+version = "0.1.0"
+
+dependencies = [
+    "apache-airflow>=2.4.0",
+    "sdkms>=4.19.0",
+]
