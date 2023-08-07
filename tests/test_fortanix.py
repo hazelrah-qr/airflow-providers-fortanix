@@ -1,7 +1,7 @@
 import os
 from unittest import mock
 
-from src.fortanix_backend import FortanixBackend
+from src.providers.fortanix.backend import FortanixBackend
 
 
 class TestFortanixSecrets:
@@ -14,5 +14,5 @@ class TestFortanixSecrets:
     )
     def test_fortanix_secrets(self):
         backend = FortanixBackend()
-        backend._client.configuration.host = os.environ.get("FORTANIX_HOST")
-        backend._client.configuration.app_api_key = os.environ.get("FORTANIX_API_KEY")
+        assert backend._client.configuration.host == os.environ.get("FORTANIX_HOST")
+        assert backend._client.configuration.app_api_key == os.environ.get("FORTANIX_API_KEY")
