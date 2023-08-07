@@ -1,7 +1,9 @@
 name: Create Python Package
 
 on:
-  push: main
+  push: 
+    branches:
+    - main
 
 permissions:
   contents: read
