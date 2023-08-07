@@ -7,3 +7,8 @@ dependencies = [
     "apache-airflow>=2.4.0",
     "sdkms>=4.19.0",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "."
+]
