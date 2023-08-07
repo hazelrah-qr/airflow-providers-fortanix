@@ -45,9 +45,9 @@ class FortanixBackend(BaseSecretsBackend, LoggingMixin):
 
     def _create_api_config(self) -> Configuration:
         if os.environ.get("FORTANIX_HOST") is None:
-            self.logger().warning("FORTANIX_HOST environment variable is not set")
+            self.log.warning("FORTANIX_HOST environment variable is not set")
         if os.environ.get("FORTANIX_API_KEY") is None:
-            self.logger().warning("FORTANIX_API_KEY environment variable is not set")
+            self.log.warning("FORTANIX_API_KEY environment variable is not set")
 
         config = Configuration()
         config.host = os.environ.get("FORTANIX_HOST")
