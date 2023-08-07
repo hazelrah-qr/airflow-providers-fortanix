@@ -1,5 +1,6 @@
-from unittest import mock
 import os
+from unittest import mock
+
 from src.fortanix_backend import FortanixBackend
 
 
