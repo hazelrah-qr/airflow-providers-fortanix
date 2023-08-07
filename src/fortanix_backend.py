@@ -52,8 +52,8 @@ class FortanixBackend(BaseSecretsBackend, LoggingMixin):
         config = Configuration()
         config.host = os.environ.get("FORTANIX_HOST")
         config.app_api_key = os.environ.get("FORTANIX_API_KEY")
+        config.ssl_ca_cert = os.environ.get("FORTANIX_SSL_CA_CERT")
         config.api_key_prefix["Authorization"] = "Bearer"
-        config.ssl_ca_cert = "/etc/ssl/certs/ca-certificates.crt"
         return config
 
     def _get_secret(self, conn_id: str) -> str:
